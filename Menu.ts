@@ -1,4 +1,5 @@
 import readlinesync = require("readline-sync");
+import { colors } from './src/util/Colors';
 
 export function main() {
 
@@ -6,9 +7,10 @@ export function main() {
 
     while (true) {
 
-        console.log("*****************************************************");
+        console.log(colors.fg.blue, 
+                    "*****************************************************");
         console.log("                                                     ");
-        console.log("       PagPapo -- Pague enquanto troca um papo!      ");
+        console.log("                BANCO DO BRAZIL COM Z                ");
         console.log("                                                     ");
         console.log("*****************************************************");
         console.log("                                                     ");
@@ -23,67 +25,95 @@ export function main() {
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
-        console.log("                                                     ");
+        console.log("                                                     ", 
+        colors.reset);
 
-        console.log("Entre com a opção desejada: ");
+        console.log(colors.fg.bluestrong,
+            "Entre com a opção desejada: ");
+            console.log(colors.reset, "");
         opcao = readlinesync.questionInt("");
 
         if (opcao == 9) {
-            console.log("\nPagPapo -- Pague enquanto troca um papo!");
+            console.log(colors.fg.bluestrong, 
+                "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
             sobre();
+            console.log(colors.reset, "");
             process.exit(0);
         }
 
         switch (opcao) {
             case 1:
-                console.log("\n\nCriar Conta\n\n");
-
+                console.log(colors.fg.bluestrong, 
+                    "\n\nCriar Conta\n\n", colors.reset);
+                
+                keyPress()
                 break;
             case 2:
-                console.log("\n\nListar todas as Contas\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nListar todas as Contas\n\n", colors.reset);
 
+                keyPress()
                 break;
             case 3:
-                console.log("\n\nConsultar dados da Conta - por número\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nConsultar dados da Conta - por número\n\n", colors.reset);
 
+                keyPress()
                 break;
             case 4:
-                console.log("\n\nAtualizar dados da Conta\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nAtualizar dados da Conta\n\n", colors.reset);
 
+                keyPress()
                 break;
             case 5:
-                console.log("\n\nApagar uma Conta\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nApagar uma Conta\n\n", colors.reset);
 
+                keyPress()
                 break;
             case 6:
-                console.log("\n\nSaque\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nSaque\n\n", colors.reset);
 
+                keyPress()
                 break;
             case 7:
-                console.log("\n\nDepósito\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nDepósito\n\n", colors.reset);
 
+                keyPress()
                 break;
             case 8:
-                console.log("\n\nTransferência entre Contas\n\n");
+                console.log(colors.fg.bluestrong, 
+                    "\n\nTransferência entre Contas\n\n", colors.reset);
 
+                keyPress()
                 break;
             default:
-                console.log("\nOpção Inválida!\n");
+                console.log(colors.fg.bluestrong, 
+                    "\nOpção Inválida!\n", colors.reset);
 
+                keyPress()
                 break;
         }
     }
 
 }
 
-/* Função com os dados da pessoa desenvolvedora */
 
-export function sobre(): void {
+function sobre(): void {
     console.log("\n*****************************************************");
-    console.log("Projeto Desenvolvido por: Gabriel Aranda ");
-    console.log("Gabriel Aranda - gabriel.aranda@hotmail.com");
+    console.log("Projeto Desenvolvido por: Gabriel Aranda");
+    console.log("Veja meus outros projetos:");
     console.log("github.com/Gabriel-Aranda1406");
     console.log("*****************************************************");
+}
+
+function keyPress(): void {
+    console.log(colors.reset, "");
+    console.log("\nPressione enter para continuar...");
+    readlinesync.prompt();
 }
 
 main();
