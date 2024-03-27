@@ -97,6 +97,7 @@ export class Conta{
 		this._saldo = value;
 	}
 	
+    // Método Sacar
     public sacar(valor: number): boolean{
         if(this._saldo >= valor){
             this.set_saldo(this._saldo - valor)
@@ -106,6 +107,12 @@ export class Conta{
         console.log("Saldo insuficiente!")
         return false;
     }
+
+    // Método Depositar
+    public depositar(valor: number): void{
+        this.set_saldo(this._saldo + valor);
+    }
+
     public visualizar(): void{
 
         let tipo: string = "";
