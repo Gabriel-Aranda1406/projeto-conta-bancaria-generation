@@ -1,27 +1,29 @@
 export class Conta{
 
-    //Atributos do objeto da classe conta
+    // Atributos da Classe Conta
     private _numero: number;
     private _agencia: number;
     private _tipo: number;
     private _titular: string;
     private _saldo: number;
 
-    //Método Construtor - Instanciar(criar) um novo Objeto da Classe Conta
-
-	constructor(numero: number, agencia: number, tipo: number, titular: string, saldo: number) {
-		this._numero = numero;
-		this._agencia = agencia;
-		this._tipo = tipo;
-		this._titular = titular;
-		this._saldo = saldo;
+    // Método Construtor - Instanciar (Criar) um novo Objeto da Classe Conta
+	constructor(_numero: number, _agencia: number, _tipo: number, _titular: string, _saldo: number) {
+		this._numero = _numero;
+		this._agencia = _agencia;
+		this._tipo = _tipo;
+		this._titular = _titular;
+		this._saldo = _saldo;
 	}
+
+    // Métodos Get e Set - Responsáveis por recuperar (get) e 
+    // alterar (set) os dados dos atributos
 
     /**
      * Getter numero
      * @return {number}
      */
-	public get_numero(): number {
+	public get numero(): number {
 		return this._numero;
 	}
 
@@ -29,7 +31,7 @@ export class Conta{
      * Getter agencia
      * @return {number}
      */
-	public get_agencia(): number {
+	public get agencia(): number {
 		return this._agencia;
 	}
 
@@ -37,7 +39,7 @@ export class Conta{
      * Getter tipo
      * @return {number}
      */
-	public get_tipo(): number {
+	public get tipo(): number {
 		return this._tipo;
 	}
 
@@ -45,7 +47,7 @@ export class Conta{
      * Getter titular
      * @return {string}
      */
-	public get_titular(): string {
+	public get titular(): string {
 		return this._titular;
 	}
 
@@ -53,7 +55,7 @@ export class Conta{
      * Getter saldo
      * @return {number}
      */
-	public get_saldo(): number {
+	public get saldo(): number {
 		return this._saldo;
 	}
 
@@ -61,7 +63,7 @@ export class Conta{
      * Setter numero
      * @param {number} value
      */
-	public set_numero(value: number) {
+	public set numero(value: number) {
 		this._numero = value;
 	}
 
@@ -69,7 +71,7 @@ export class Conta{
      * Setter agencia
      * @param {number} value
      */
-	public set_agencia(value: number) {
+	public set agencia(value: number) {
 		this._agencia = value;
 	}
 
@@ -77,7 +79,7 @@ export class Conta{
      * Setter tipo
      * @param {number} value
      */
-	public set_tipo(value: number) {
+	public set tipo(value: number) {
 		this._tipo = value;
 	}
 
@@ -85,7 +87,7 @@ export class Conta{
      * Setter titular
      * @param {string} value
      */
-	public set_titular(value: string) {
+	public set titular(value: string) {
 		this._titular = value;
 	}
 
@@ -93,24 +95,27 @@ export class Conta{
      * Setter saldo
      * @param {number} value
      */
-	public set_saldo(value: number) {
+	public set saldo(value: number) {
 		this._saldo = value;
 	}
-	
+   
+
     // Método Sacar
     public sacar(valor: number): boolean{
+        
         if(this._saldo >= valor){
-            this.set_saldo(this._saldo - valor)
+            this._saldo = this._saldo - valor; // Mudar
             return true;
         }
 
-        console.log("Saldo insuficiente!")
+        console.log("\nSaldo insuficiente!");
         return false;
+
     }
 
     // Método Depositar
     public depositar(valor: number): void{
-        this.set_saldo(this._saldo + valor);
+        this._saldo = this._saldo + valor; // Mudar
     }
 
     public visualizar(): void{
@@ -126,14 +131,13 @@ export class Conta{
                 break;
         }
 
-        console.log("***************************************");
+        console.log("\n*****************************************************");
         console.log("Dados da Conta");
-        console.log("***************************************");
+        console.log("*****************************************************");
         console.log(`Número da conta: ${this._numero}`);
         console.log(`Número da agência: ${this._agencia}`);
         console.log(`Tipo da conta: ${tipo}`);
         console.log(`Titular da conta: ${this._titular}`);
         console.log(`Saldo da conta: ${this._saldo}`);
-
     }
 }
