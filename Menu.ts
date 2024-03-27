@@ -1,16 +1,24 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/Colors';
+import { Conta } from "./src/model/Conta";
 
 export function main() {
 
     let opcao: number;
+
+    let c1: Conta = new Conta(1, 123, 1, "Gabriel", 20000);
+    c1.visualizar();
+
+    c1.sacar(1000);
+
+    c1.visualizar();
 
     while (true) {
 
         console.log(colors.fg.blue, 
                     "*****************************************************");
         console.log("                                                     ");
-        console.log("                BANCO DO BRAZIL COM Z                ");
+        console.log("       PagPapo - Pague enquanto troca um papo        ");
         console.log("                                                     ");
         console.log("*****************************************************");
         console.log("                                                     ");
