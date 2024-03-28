@@ -120,7 +120,7 @@ function sobre(): void {
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: Gabriel Aranda ");
     console.log("Entre e veja outros projetos: ");
-    console.log("github.com/Gabriel-Aranda1406");
+    console.log("github.com/Gabriel-Aranda14A gent");
     console.log("*****************************************************");
 }
 
