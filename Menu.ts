@@ -9,25 +9,37 @@ export function main() {
 
     let opcao: number;
 
-    let contas: ContaController = new ContaController();
+    //Instância da Classe Controller
+    const contas: ContaController = new ContaController();
 
+    //Instância da Classe Conta Corrente
+    //Adicionada na Collection listaContas
+    const contaCorrente: ContaCorrente = new ContaCorrente(1, 456, 1, "Yasmine Lamark", 500000, 1000)
+    contas.cadastrar(contaCorrente);
+    
+
+
+    //Instância da Classe ContaPoupanca
+    //Adicionada na Collection listaContas
+    const contaPoupanca: ContaPoupanca = new ContaPoupanca(2, 123, 2, "Victor", 1000, 10);
+    contas.cadastrar(contaPoupanca);
 
 
    // Objeto da Classe ContaCorrente (Teste)
-    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
-    contacorrente.visualizar();
-    contacorrente.sacar(2000);
-    contacorrente.visualizar();
-    contacorrente.depositar(1000);
-    contacorrente.visualizar();
+    // const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
+    // contacorrente.visualizar();
+    // contacorrente.sacar(2000);
+    // contacorrente.visualizar();
+    // contacorrente.depositar(1000);
+    // contacorrente.visualizar();
 
     // Objeto da Classe ContaPoupanca (teste)
-    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
-    contapoupanca.visualizar();
-    contapoupanca.sacar(200);
-    contapoupanca.visualizar();
-    contapoupanca.depositar(1000);
-    contapoupanca.visualizar();
+    // const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
+    // contapoupanca.visualizar();
+    // contapoupanca.sacar(200);
+    // contapoupanca.visualizar();
+    // contapoupanca.depositar(1000);
+    // contapoupanca.visualizar();
 
     while (true) {
 
@@ -69,6 +81,10 @@ export function main() {
                 break;
             case 2:
                 console.log(colors.fg.whitestrong, "\n\nListar todas as Contas\n\n", colors.reset);
+
+                 // Chamada do Método listarTodas() da Classe ContaController
+                contas.listarTodas();
+
 
                 keyPress()
                 break;
