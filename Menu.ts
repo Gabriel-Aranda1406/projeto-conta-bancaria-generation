@@ -188,6 +188,7 @@ export function main() {
 
                 keyPress()
                 break;
+            
             case 6:
                 console.log(colors.fg.whitestrong, "\n\nSaque\n\n", colors.reset);
 
