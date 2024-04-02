@@ -60,16 +60,16 @@ export function main() {
         console.log("            6 - Sacar                                ");
         console.log("            7 - Depositar                            ");
         console.log("            8 - Transferir valores entre Contas      ");
-        console.log("            9 - Sair                                 ");
-        console.log("                                                     ");
+        console.log("            9 - Buscar conta por titular             ");
+        console.log("                     0 - Sair                        ");
         console.log("*****************************************************");
         console.log("                                                     ", colors.reset);
 
         console.log("Entre com a opção desejada: ");
         opcao = readlinesync.questionInt("");
 
-        if (opcao == 9) {
-            console.log(colors.fg.greenstrong, "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+        if (opcao == 0) {
+            console.log(colors.fg.greenstrong, "\nPagPapo - Pague enquanto troca um papo!");
             sobre();
             console.log(colors.reset, "");
             process.exit(0);
@@ -234,6 +234,18 @@ export function main() {
 
 
                 keyPress()
+                break;
+
+            case 9:
+                console.log("Consultar conta por titular")
+
+                console.log("Digite o nome do titular: ")
+                titular = readlinesync.question("")
+
+                contas.procurarPorTitular(titular)
+
+
+                keyPress();
                 break;
             default:
                 console.log(colors.fg.whitestrong, "\nOpção Inválida!\n", colors.reset);

@@ -3,6 +3,15 @@ import { ContaRepository } from "../repository/ContaRepository";
 import { colors } from "../util/Colors";
 
 export class ContaController implements ContaRepository {
+    
+    procurarPorTitular(titular: string) {
+        let listaContasPorTitular = this.listaContas.filter(c => 
+            c.titular.toUpperCase().includes(titular.toUpperCase()))
+
+        for( let conta of listaContasPorTitular){
+            conta.visualizar();
+        }
+    }
 
 
     // Collection Array que aramzenará os Objetos das Classes
