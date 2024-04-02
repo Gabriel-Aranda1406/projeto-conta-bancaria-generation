@@ -57,11 +57,11 @@ export class ContaController implements ContaRepository {
     }
     
     public sacar(numero: number, valor: number): void {
-        let conta = this.buscarNoArray(numero);
+        let buscaConta = this.buscarNoArray(numero);
 		
-		if (conta != null) {
+		if (buscaConta != null) {
 			
-			if(conta.sacar(valor) == true)
+			if(buscaConta.sacar(valor) === true)
             console.log(colors.fg.green,"\nO Saque na Conta numero: " + numero + 
                         " foi efetuado com sucesso!", colors.reset);		
 		
@@ -72,10 +72,10 @@ export class ContaController implements ContaRepository {
     }
     
     public depositar(numero: number, valor: number): void {
-        let conta = this.buscarNoArray(numero);
+        let buscaConta = this.buscarNoArray(numero);
 
-        if (conta != null){
-                conta.depositar(valor);
+        if (buscaConta != null){
+                buscaConta.depositar(valor);
                 console.log(colors.fg.green,"\nO Depósito na Conta numero: " + numero + 
                 " foi efetuado com sucesso!", colors.reset);	
         }else
